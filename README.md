@@ -1,5 +1,34 @@
 # SER594 Team 7 - AI Resume Roaster
 
+## Description
+
+AI Resume Roaster is an AI-based resume analyzer software tool that allows recruiters to evaluate candidate resumes against the requirements specified in job descriptions. The software is capable of analyzing the candidate resumes to detect their key skills, missing keywords, accomplishments, and job fit while producing match reports. 
+
+## Project Team Members
+- Nidhi Vispute - Github handle: nvisputech
+- Anshul Kumar Sharma - Github handle: akshar18
+- Rahaf Almakhalas - Github handle: Rahafm11
+- Rithish Jayan - Github handle: RithishJayan
+
+## Required Tools and Dependencies
+### Tools
+- Git
+- Node.js
+- npm
+
+### Frontend Dependencies
+- React
+- Vite
+- TypeScript
+
+### Backend Dependencies
+- Express
+- TypeScript
+
+### Optional Tools
+- Docker
+- Docker Compose
+
 Milestone 1 creates a monorepo boilerplate with:
 
 - `frontend/`: React + Vite + TypeScript app shell
