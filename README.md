@@ -31,6 +31,39 @@ cp backend/.env.example backend/.env
 npm run dev
 ```
 
+## Docker Quick Start (One Go)
+
+Run both frontend and backend with Docker Compose in development mode:
+
+```bash
+./scripts/start-dev.sh
+```
+
+Equivalent command:
+
+```bash
+docker compose up --build
+```
+
+Stop containers:
+
+```bash
+docker compose down
+```
+
+Rebuild from scratch:
+
+```bash
+docker compose down --volumes
+docker compose up --build
+```
+
+Ports:
+
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:4000`
+- Health: `http://localhost:4000/api/health`
+
 ## Milestone 1 API Contract
 
 - `GET /api/health`
