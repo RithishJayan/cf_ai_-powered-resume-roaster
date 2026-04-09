@@ -2,73 +2,137 @@
 
 ## Description
 
-AI Resume Roaster is an AI-based resume analyzer software tool that allows recruiters to evaluate candidate resumes against the requirements specified in job descriptions. The software is capable of analyzing the candidate resumes to detect their key skills, missing keywords, accomplishments, and job fit while producing match reports. 
+AI Resume Roaster is an AI-based resume analyzer tool that allows recruiters to evaluate candidate resumes against job descriptions. The system analyzes resumes to identify key skills, missing keywords, accomplishments, and overall job fit, and generates structured match reports with actionable feedback.
 
 ## Project Team Members
-- Nidhi Vispute - Github handle: nvisputech
-- Anshul Kumar Sharma - Github handle: akshar18
-- Rahaf Almakhalas - Github handle: Rahafm11
-- Rithish Jayan - Github handle: RithishJayan
+
+- Nidhi Vispute - GitHub: `nvisputech`
+- Anshul Kumar Sharma - GitHub: `akshar18`
+- Rahaf Almakhalas - GitHub: `Rahafm11`
+- Rithish Jayan - GitHub: `RithishJayan`
+
+## Repository
+
+- Repository name: `SER594-Team7-AIResumeRoaster`
+
+## Development Environment Setup
+
+Ensure the following tools are installed:
+
+- Node.js (v18+ recommended)
+- npm (v9+ recommended)
+- Git
+
+Verify installation:
+
+```bash
+node -v
+npm -v
+git --version
+```
 
 ## Required Tools and Dependencies
+
 ### Tools
+
 - Git
 - Node.js
 - npm
 
-### Frontend Dependencies
+### Frontend
+
 - React
 - Vite
 - TypeScript
 
-### Backend Dependencies
+### Backend
+
 - Express
 - TypeScript
 
 ### Optional Tools
+
 - Docker
 - Docker Compose
 
-Milestone 1 creates a monorepo boilerplate with:
-
-- `frontend/`: React + Vite + TypeScript app shell
-- `backend/`: Express + TypeScript API shell
-
 ## Project Structure
 
-- `frontend`: UI boilerplate and API client wiring
-- `backend`: API server with health and roast stub endpoints
+```text
+project-root/
+├── frontend/      # React + Vite + TypeScript UI
+├── backend/       # Express + TypeScript API
+├── scripts/       # Utility scripts
+├── docker-compose.yml
+└── README.md
+```
 
-## Quick Start
+## Architecture Overview
 
-1. Install dependencies from root:
+- Frontend: React (Vite + TypeScript)
+- Backend: Express (TypeScript)
+- Communication: REST API
+- AI Layer: Planned for Milestone 2+ (resume analysis, scoring, and feedback generation)
+
+## Environment Variables
+
+### Frontend (`frontend/.env`)
+
+```env
+VITE_API_URL=http://localhost:4000
+```
+
+### Backend (`backend/.env`)
+
+```env
+PORT=4000
+```
+
+## Quick Start (Local Development)
+
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Copy env examples:
+2. Set up environment variables
 
 ```bash
 cp frontend/.env.example frontend/.env
 cp backend/.env.example backend/.env
 ```
 
-3. Start both apps:
+3. Start both frontend and backend
 
 ```bash
 npm run dev
 ```
 
-## Docker Quick Start (One Go)
+## Run Services Individually
 
-Run both frontend and backend with Docker Compose in development mode:
+### Frontend
+
+```bash
+cd frontend
+npm run dev
+```
+
+### Backend
+
+```bash
+cd backend
+npm run dev
+```
+
+## Docker Quick Start
+
+Run both frontend and backend using Docker Compose:
 
 ```bash
 ./scripts/start-dev.sh
 ```
 
-Equivalent command:
+or
 
 ```bash
 docker compose up --build
@@ -87,16 +151,47 @@ docker compose down --volumes
 docker compose up --build
 ```
 
-Ports:
+## Application URLs
 
-- Frontend: `http://localhost:5173`
-- Backend: `http://localhost:4000`
-- Health: `http://localhost:4000/api/health`
+- Frontend: [http://localhost:5173](http://localhost:5173)
+- Backend: [http://localhost:4000](http://localhost:4000)
+- Health Check: [http://localhost:4000/api/health](http://localhost:4000/api/health)
 
 ## Milestone 1 API Contract
 
-- `GET /api/health`
-  - Response: `{ "status": "ok", "service": "resume-roaster-backend", "version": "0.1.0" }`
-- `POST /api/roast`
-  - Request: `{ "resumeText"?: string, "targetRole"?: string, "roastLevel"?: string }`
-  - Response: `{ "roast": string, "score": number, "breakdown": Array<{ "name": string, "score": number }> }`
+### `GET /api/health`
+
+Response:
+
+```json
+{
+  "status": "ok",
+  "service": "resume-roaster-backend",
+  "version": "0.1.0"
+}
+```
+
+### `POST /api/roast`
+
+Request:
+
+```json
+{
+  "resumeText": "string",
+  "targetRole": "string",
+  "roastLevel": "string"
+}
+```
+
+Response:
+
+```json
+{
+  "roast": "string",
+  "score": 85,
+  "breakdown": [
+    { "name": "Skills Match", "score": 90 },
+    { "name": "Keyword Coverage", "score": 80 }
+  ]
+}
+```
