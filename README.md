@@ -1,5 +1,3 @@
-# SER594 Team 7 - AI Resume Roaster
-
 ## Description
 
 AI Resume Roaster is an AI-based resume analyzer tool that allows recruiters to evaluate candidate resumes against job descriptions. The system analyzes resumes to identify key skills, missing keywords, accomplishments, and overall job fit, and generates structured match reports with actionable feedback.
@@ -12,13 +10,6 @@ AI Resume Roaster is an AI-based resume analyzer tool that allows recruiters to 
 - Integrated authentication using NextAuth and middleware
 - Worked with PostgreSQL (pgvector) for structured and vector data storage
 - Contributed to testing, debugging, and full-stack integration
-
-## Project Team Members
-
-- Nidhi Vispute - GitHub: `nvisputech`
-- Anshul Kumar Sharma - GitHub: `akshar18`
-- Rahaf Almakhalas - GitHub: `Rahafm11`
-- Rithish Jayan - GitHub: `RithishJayan`
 
 ## Repository
 
