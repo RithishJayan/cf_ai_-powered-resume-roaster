@@ -1,19 +1,56 @@
-# SER594 Team 7 - AI Resume Roaster
-
 ## Description
 
 AI Resume Roaster is an AI-based resume analyzer tool that allows recruiters to evaluate candidate resumes against job descriptions. The system analyzes resumes to identify key skills, missing keywords, accomplishments, and overall job fit, and generates structured match reports with actionable feedback.
 
-## Project Team Members
+This project demonstrates an AI-powered application aligned with Cloudflare's architecture principles:
 
-- Nidhi Vispute - GitHub: `nvisputech`
-- Anshul Kumar Sharma - GitHub: `akshar18`
-- Rahaf Almakhalas - GitHub: `Rahafm11`
-- Rithish Jayan - GitHub: `RithishJayan`
+- **LLM Integration:** Uses external LLM APIs (Groq / OpenAI) for generating resume feedback
+- **Workflow Coordination:** Backend API orchestrates RAG pipeline (embedding → retrieval → generation)
+- **User Interaction:** Users upload resumes and receive AI-generated feedback via UI
+- **Memory/State:** Uses PostgreSQL + pgvector for storing embeddings, logs, and feedback history
 
-## Repository
+## 🧠 My Contributions
 
-- Repository name: `SER594-Team7-AIResumeRoaster`
+- Built backend APIs using Hono for resume analysis and feedback workflows
+- Implemented RAG pipeline using embeddings and vector similarity search
+- Developed frontend features using Next.js and TypeScript
+- Integrated authentication using NextAuth and middleware
+- Worked with PostgreSQL (pgvector) for structured and vector data storage
+- Contributed to testing, debugging, and full-stack integration
+
+# AI Prompts Used
+
+## Resume Roasting Prompt
+
+System Prompt:
+You are an expert resume reviewer. Provide detailed, constructive, and honest feedback on resumes.
+
+User Prompt Template:
+- Resume content: {resume_text}
+- Target job role: {job_role}
+- Instructions: Provide actionable feedback, highlight strengths, weaknesses, and suggest improvements.
+
+## RAG Context Prompt
+
+System Prompt:
+Use the provided context to generate more relevant and accurate feedback.
+
+Context:
+Retrieved similar resume examples and feedback snippets using vector similarity search.
+
+## Feedback Generation Prompt
+
+System Prompt:
+Generate structured feedback including:
+- Strengths
+- Weaknesses
+- Improvements
+- Final score
+
+---
+
+## Notes
+Prompts were iteratively refined to improve response quality, reduce hallucinations, and ensure actionable outputs.
 
 ## Development Environment Setup
 
