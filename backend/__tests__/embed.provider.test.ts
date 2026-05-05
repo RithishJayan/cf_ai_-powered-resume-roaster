@@ -51,3 +51,4 @@ describe('resolveEmbeddingProvider', () => {
     expect(resolveEmbeddingProvider()).toBe('openai');
   });
 });
+// updated
